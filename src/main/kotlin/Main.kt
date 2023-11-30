@@ -2,23 +2,26 @@ import javax.lang.model.type.UnionType
 
 fun main() {
     var inputNumber1: Double
-    var operator: String
+    var operator = ""
     var inputNumber2: Double
 
-    inputNumber1 = Input().inputNum().toDouble()
-    operator = Input().inputOper()
-    inputNumber2 = Input().inputNum().toDouble()
+    inputNumber1 = Input().inputNum()
 
-    var calculator = Calculate(inputNumber1, inputNumber2, operator)
+    while (true) {
+        operator = Input().inputOper()
 
+        if (operator == "=") break
 
-    var resValue = calculator.calc()
+        inputNumber2 = Input().inputNum()
 
-    var result = if(resValue % 1 == 0.0) resValue.toInt() else resValue
+        var calculator = Calculate(inputNumber1, inputNumber2, operator)
 
-    inputNumber1 = resValue
+        var resValue = calculator.calc()
+        var result = if (resValue % 1 == 0.0) resValue.toLong() else resValue
 
-    println(result)
+        inputNumber1 = resValue
 
+        println(result)
+    }
 }
 
