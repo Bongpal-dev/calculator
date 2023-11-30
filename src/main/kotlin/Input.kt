@@ -6,9 +6,6 @@ class Input {
         while (number.isEmpty()) {
 
             number = readln()
-            var letterCheck = false
-
-            number.forEach { it -> if (it.isLetter()) letterCheck = true}// 입력된 값에 문자가 포함되어있는지 체크
 
             if (number.toDoubleOrNull() == null) {
                 println("숫자만 입력해주세요.")
@@ -22,15 +19,17 @@ class Input {
         return number.toDouble()
     }
 
-    fun inputOper (): String {
+    fun inputOperator (): String {
         var operator = ""
 
         while (operator.isEmpty()) {
             operator = readln()
-            var operCheck = true
+            var operatorCheck = true
 
-            operator.forEach { it -> if (it == '+' || it == '-' || it == '*'|| it == '/' || it == '%' || it == '=') operCheck = true else operCheck = false }
-            if (!operCheck) {
+            operator.forEach { operatorCheck =
+                if (it == '+' || it == '-' || it == '*'|| it == '/' || it == '%' || it == '=') true else false
+            }
+            if (!operatorCheck) {
                 println("[+], [-], [/], [*], [%] 중에 하나를 입력해야합니다. \n계산을 끝내려면 [=]을 입력하세요. ")
                 operator = ""
             }
