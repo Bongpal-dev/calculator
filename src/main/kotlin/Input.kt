@@ -27,10 +27,10 @@ class Input {
             var operatorCheck = true
 
             operator.forEach { operatorCheck =
-                if (it == '+' || it == '-' || it == '*'|| it == '/' || it == '%' || it == '=') true else false
+                if (it == '+' || it == '-' || it == '*'|| it == '/' || it == '=') true else false
             }
             if (!operatorCheck) {
-                println("[+], [-], [/], [*], [%] 중에 하나를 입력해야합니다. \n계산을 끝내려면 [=]을 입력하세요. ")
+                println("[+], [-], [/], [*] 중에 하나를 입력해야합니다. \n계산을 끝내려면 [=]을 입력하세요. ")
                 operator = ""
             }
             else if (operator.isEmpty()) {

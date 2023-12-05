@@ -1,5 +1,5 @@
-class AddOperation: Operation() {
-    override fun operate(n1: Double, n2: Double): Double = n1 + n2
+class AddOperation (): Operation() {
+    override fun operate(num1: Double, num2: Double): Double = num1 + num2
 
 }
 
